@@ -11,3 +11,12 @@ Apache Commons CSV - для работы с CSV.
 # Swagger
 
 Доступен по [адресу](http://localhost:8080/swagger-ui.html).
+
+## Notes
+
+Не было времени заняться статус-кодами,
+обработкой ошибок и написанием тестов.
+
+Для импорта из csv запрос в Postman'е выглядит так:
+
+![img](/example/exampleCSVimport.png)

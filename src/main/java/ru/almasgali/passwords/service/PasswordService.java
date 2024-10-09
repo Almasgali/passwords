@@ -12,6 +12,7 @@ import ru.almasgali.passwords.repository.PasswordRepository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -38,6 +39,7 @@ public class PasswordService {
             PasswordEntity password = reader.find(PasswordEntity.class, id, n);
             result.add(password);
         }
+        result.sort(Comparator.comparing(PasswordEntity::getUpdatedAt).reversed());
         return result;
     }
 
