@@ -10,7 +10,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://pg_db:5432/news
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://passwords_db:5432/passwords
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
     ports:
