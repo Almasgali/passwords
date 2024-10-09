@@ -1,0 +1,26 @@
+services:
+  passwords_app:
+    image: 'passwords:0.0.1'
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: passwords_app
+    depends_on:
+      - passwords_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://pg_db:5432/news
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - 8080:8080
+
+  passwords_db:
+    image: postgres
+    restart: always
+    container_name: passwords_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=passwords
